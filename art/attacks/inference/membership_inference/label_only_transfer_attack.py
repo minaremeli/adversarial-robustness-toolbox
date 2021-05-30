@@ -31,7 +31,7 @@ class LabelOnlyTransferAttack(InferenceAttack):
         self.membership_inference = membership_inference
         self.transferred_membership_inference = membership_inference
 
-    def fit(self, x: np.ndarray, test_x: np.ndarray):
+    def fit(self, x: np.ndarray, test_x: np.ndarray, **kwargs):
         # query labels from the classifier model
         train_labels = check_and_transform_label_format(np.argmax(self.estimator.predict(x=x), axis=1), self.estimator.nb_classes)
         test_labels = check_and_transform_label_format(np.argmax(self.estimator.predict(x=test_x), axis=1), self.estimator.nb_classes)
@@ -42,7 +42,12 @@ class LabelOnlyTransferAttack(InferenceAttack):
         self.membership_inference.estimator.fit(
             data,
             labels,
+            **kwargs
         )
+
+        pred = self.membership_inference.estimator.predict(data)
+        acc = np.sum(np.argmax(pred, axis=1) == np.argmax(labels, axis=1)) / len(labels)
+        print("Accuracy of shadow model (on relabeled dataset): %f" % acc)
 
         # fit the attack model on shadow model
         self.membership_inference.fit(x, train_labels, test_x, test_labels)

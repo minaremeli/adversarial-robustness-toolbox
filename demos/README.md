@@ -33,4 +33,4 @@ Since the implemented membership inference attacks are all black-box attacks, we
 | MembershipInferenceBlackBoxRuleBased               |       yes      |           yes           |           no           |
 | [LabelOnlyDecisionBoundary](label_only_membership_inference.ipynb) (supervised threshold)   |       yes      |           yes           |           yes          |
 | [LabelOnlyDecisionBoundary](label_only_membership_inference.ipynb) (unsupervised threshold) |       no       |            no           |           no           |
-| LabelOnlyTransferAttack                            |       yes      |            no           |           yes          |
+| [LabelOnlyTransferAttack](label_only_transfer_attack.ipynb)                            |       yes      |            no           |           yes          |

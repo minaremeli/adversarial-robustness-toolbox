@@ -29,8 +29,8 @@ Since the implemented membership inference attacks are all black-box attacks, we
 
 |                                                    | Access to data | Access to correct label | Membership information |
 |:--------------------------------------------------:|:--------------:|:-----------------------:|:----------------------:|
-| MembershipInferenceBlackBox                        |       yes      |           yes           |           yes          |
-| MembershipInferenceBlackBoxRuleBased               |       yes      |           yes           |           no           |
+| [MembershipInferenceBlackBox](../notebooks/attack_membership_inference.ipynb)                        |       yes      |           yes           |           yes          |
+| [MembershipInferenceBlackBoxRuleBased](../notebooks/attack_membership_inference.ipynb)               |       yes      |           yes           |           no           |
 | [LabelOnlyDecisionBoundary](label_only_membership_inference.ipynb) (supervised threshold)   |       yes      |           yes           |           yes          |
 | [LabelOnlyDecisionBoundary](label_only_membership_inference.ipynb) (unsupervised threshold) |       no       |            no           |           no           |
 | [LabelOnlyTransferAttack](label_only_transfer_attack.ipynb)                            |       yes      |            no           |           yes          |

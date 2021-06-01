@@ -32,6 +32,7 @@ Since the implemented membership inference attacks are all black-box attacks, we
 
 |                                                    | Access to data | Access to correct label | Membership information |
 |:--------------------------------------------------:|:--------------:|:-----------------------:|:----------------------:|
+| [ShadowModelAttack](https://nbviewer.jupyter.org/github/minaremeli/adversarial-robustness-toolbox/blob/main/demos/shadow_model_attack.ipynb) |       yes       |            yes           |           no           |
 | [LabelOnlyDecisionBoundary](https://nbviewer.jupyter.org/github/minaremeli/adversarial-robustness-toolbox/blob/main/demos/label_only_membership_inference.ipynb) (unsupervised threshold) |       no       |            no           |           no           |
 | [LabelOnlyTransferAttack](https://nbviewer.jupyter.org/github/minaremeli/adversarial-robustness-toolbox/blob/main/demos/label_only_transfer_attack.ipynb)                            |       yes      |            no           |           yes          |
 

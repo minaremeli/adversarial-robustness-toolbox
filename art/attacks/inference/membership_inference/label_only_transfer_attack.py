@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 
 import numpy as np
 
-from typing import Union
+from typing import Union, Optional
 from art.attacks.attack import InferenceAttack
 from art.attacks.inference.membership_inference.black_box import MembershipInferenceBlackBox
 from art.estimators.estimator import BaseEstimator
@@ -63,7 +63,7 @@ class LabelOnlyTransferAttack(InferenceAttack):
     def no_transfer(self):
         self.transferred_membership_inference = self.membership_inference
 
-    def infer(self, x: np.ndarray, **kwargs) -> np.ndarray:
+    def infer(self, x: np.ndarray, y: Optional[np.ndarray] = None, **kwargs) -> np.ndarray:
         y = np.argmax(self.estimator.predict(x=x), axis=1)
 
         return self.transferred_membership_inference.infer(x, y)

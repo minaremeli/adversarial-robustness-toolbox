@@ -7,3 +7,4 @@ from art.attacks.inference.membership_inference.label_only_gap_attack import Lab
 from art.attacks.inference.membership_inference.label_only_boundary_distance import LabelOnlyDecisionBoundary
 from art.attacks.inference.membership_inference.label_only_transfer_attack import LabelOnlyTransferAttack
 from art.attacks.inference.membership_inference.shadow_model_attack import ShadowModelAttack
+from art.attacks.inference.membership_inference.black_box_loss_based import MembershipInferenceBlackBoxLossBased

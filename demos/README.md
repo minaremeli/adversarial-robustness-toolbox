@@ -26,7 +26,7 @@ It is possible that the attacker only has access to model inputs, without their 
 The attacker may know the membership information about a *subset* of the training data.
 
 ### Attack categorization
-Since the implemented membership inference attacks are all black-box attacks, we only categorize them based on _Access to data_, _Access to correct label_ and _Membership information_.
+Since all of the implemented membership inference attacks can be used as **black-box** attacks, we only categorize them based on _Access to data_, _Access to correct label_ and _Membership information_.
 
 #### Newly implemented attacks
 
@@ -35,6 +35,16 @@ Since the implemented membership inference attacks are all black-box attacks, we
 | [ShadowModelAttack](https://nbviewer.jupyter.org/github/minaremeli/adversarial-robustness-toolbox/blob/main/demos/shadow_model_attack.ipynb) |       yes       |            yes           |           no           |
 | [LabelOnlyDecisionBoundary](https://nbviewer.jupyter.org/github/minaremeli/adversarial-robustness-toolbox/blob/main/demos/label_only_membership_inference.ipynb) (unsupervised threshold) |       no       |            no           |           no           |
 | [LabelOnlyTransferAttack](https://nbviewer.jupyter.org/github/minaremeli/adversarial-robustness-toolbox/blob/main/demos/label_only_transfer_attack.ipynb)                            |       yes      |            no           |           yes          |
+
+**Note about the demo notebooks:** We used the MNIST dataset for demonstrating the attacks, but any kind of dataset can be used. The framework provides utils for loading a few of these datasets in `art.utils`:
+- `load_dataset(name: str)` where `name` can be any of the following:
+	- mnist
+	- cifar10
+	- stl10
+	- iris
+	- nursery
+
+Similarly, the demos only show attacks against PyTorch classifiers, but these attacks can be transferred to many other types of frameworks which ART supports. For more see the [section](#Using-ART-on-multiple-frameworks) about using ART on different frameworks. 
 
 #### Already existing attacks
 |                                                    | Access to data | Access to correct label | Membership information |
